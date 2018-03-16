@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>浏览器对象</title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
+ </head>
+ <body>
+  <!--先编写好网页布局-->
+  <h3>操作成功</h3>
+  <p><span id="s">5</span>秒后返回页面</p>
+<a href="javascript:history.back()">返回</a></p>
+  
+ 
+  <script type="text/javascript">  
+
+  var num = document.getElementById("s");
+
+  var id=setInterval(clock,1000);
+
+  function clock(){
+
+    num.innerText=num.innerText-1; 
+
+    if(num.innerText<=0){
+
+        window.location.href="http://www.baidu.com";
+
+    }
+
+  }
+ </script> 
+</body>
+</html>

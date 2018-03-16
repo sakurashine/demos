@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;
+}
+#nav{
+	width:600px;
+	
+	margin:30px auto;
+}
+ul{
+	list-style:none;
+	text-align: left;
+
+}
+
+li{
+	float:left;
+}
+ul li ul{   
+	display:none; 
+	
+	position:absolute;
+	
+}
+ul li:hover ul{ 
+	display:block;
+	
+}
+ul li ul li{
+	display:block;
+    
+	float:none;
+	background-color:"pink";
+	
+	
+}
+ul li ul li a{
+		width:155px;
+	background:#CCC;
+}
+
+a{
+	text-decoration:none;
+	display:block;
+	font-family:Arial;
+	font-size:24px;
+	line-height:20px;
+	color:white;
+	padding:15px 10px;
+	perspective:200px;
+}
+.front,.back{
+	position:absolute;
+	background:pink;
+	color:white;
+	padding:15px 10px;
+	
+}
+.front{
+	transform: rotatex(0deg) translatez(25px);
+}
+.back{
+	transform: rotatex(-90deg) translatez(25px);
+	color:white;
+}
+.three-d-box{
+	transition:all .3s ease-out;
+	transform: translatez(-25px);
+	transform-style:preserve-3d;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	width:100%;
+	height:100%;
+	
+}
+
+.three-d-box:hover {
+	transform: translateZ(-25px) rotateX(90deg);
+}
+
+</style>
+</head>
+
+<body>
+<div id="nav">
+<ul class="nav-menu">
+  <li>
+    <a href="#">
+      HOME
+	  <span class="three-d-box">
+        <span class="front">HOME</span>
+        <span class="back">HOME</span>
+      </span>	  
+    </a>
+  </li>
+  <li>
+  <a href="#">
+    DEMO
+    <span class="three-d-box">
+      <span class="front">DEMO</span>
+      <span class="back">DEMO</span>
+    </span>
+    <ul>
+	  <li>
+        <a href="#" class="three-d">
+		Html5dd
+		<span class="three-d-box">
+          <span class="front">Html5dd</span>
+          <span class="back">Html5dd</span>
+          </span>
+		</a>
+      </li>
+	  <li><a href="#" class="three-d">
+		  Css3CCCCCC
+		  <span class="three-d-box">
+            <span class="front">Css3CCCCCC</span>
+            <span class="back">Css3CCCCCC</span>
+          </span>
+		  </a>
+      </li>
+	  <li><a href="#" class="three-d">
+	      JavaScript
+		  <span class="three-d-box">
+            <span class="front">JavaScript</span>
+            <span class="back">JavaScript</span>
+          </span>
+		  </a>
+      </li>
+	</ul>
+  </a>
+  </li>
+</ul>
+</div>
+</body>
+</html>

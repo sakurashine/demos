@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{border:0; margin:0;}
+#div1{ 
+  width:140px; 
+  height:500px;   background:white; 
+  position:relative; 
+  top:0;   
+  left:-140px;}
+.div2{ 
+  width:24px; 
+  height:60px; 
+  background:white;   position:absolute; 
+  top:40px; 
+  left:140px;}
+img{
+	position:relative; 
+	top:0;   
+	left:-140px;
+}
+</style>
+<script type="text/javascript">
+  window.onload=function()
+{
+  var div1=document.getElementById("div1");
+  div1.onmouseover=function()
+  {
+    startMove(0);
+  }
+  div1.onmouseout=function()
+  {
+    startMove(-140);
+  }
+}
+var timer=null;
+function startMove(target)
+{
+  clearInterval(timer);
+  var div1=document.getElementById("div1");
+  timer=setInterval(function()
+  {
+    var speed=(target-div1.offsetLeft)/10;
+    speed=speed>0?Math.ceil(speed):Math.floor(speed);
+    if(div1.offsetLeft==target)
+    {
+      clearInterval(timer);
+    }
+    else
+    {
+      div1.style.left=div1.offsetLeft+speed+'px';
+    }  
+  },30);   
+}
+
+</script>
+
+</head>
+<body>
+  <div id="div1"><div class="div2"> <img id='bilibili' src='./22_bmlindex_comp.png' > </div></div>
+  
+</body>
+</html>

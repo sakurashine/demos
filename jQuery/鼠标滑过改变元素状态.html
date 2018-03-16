@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../jQuery/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<table width="234" height="77" border="1">
+  <tr align="center" id="tr1" onMouseOver="over(this.id)" onMouseOut="out(this.id)">
+    <td width="52">&nbsp;</td>
+    <td width="65">商品</td>
+    <td width="95">价格（元）</td>
+  </tr>
+  <tr align="center" id="tr2" onMouseOver="over(this.id)" onMouseOut="out(this.id)">
+    <td>A商场</td>
+    <td>S商品</td>
+    <td>100</td>
+  </tr>
+  <tr align="center" id="tr3" onMouseOver="over(this.id)" onMouseOut="out(this.id)">
+    <td>B商场</td>
+    <td>S商品</td>
+    <td>80</td>
+  </tr>
+</table>
+<script>
+/*function over(trname){
+    console.log("over")
+    $("#"+trname).css({background:"#0000FF",color:"#FFFFFF"})
+    //eval(trname).style.backgroundColor="0000FF";
+    //eval(trname).style.color="FFFFFF";
+}
+function out(trname){
+    console.log("out")
+	$("#"+trname).css({background:"#FFFFFF",color:"#000000"})
+    //eval(trname).style.backgroundColor="FFFFFF";
+    //eval(trname).style.color="000000";
+}*/
+
+        //第二种方法
+		$("td").on("mouseenter",function() {
+            $(this).css({background:"#ff0",color:"#e23a6e"})
+			})
+		$("td").on("mouseleave",function() {
+            $(this).css({background:"#fff",color:"#000"})
+			})
+        
+
+    
+</script>
+</body>
+</html>

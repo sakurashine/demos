@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+.parent{width:100px;height:100px;background:#e23a6e;float:left;}
+.child{width:100px;height:100px;background:#999;float:left;}
+</style>
+</head>
+
+<body>
+	<div class="parent" id="parentDiv"></div>
+    <div style="position:absolute;left:0;top:0;width:100%;height:100%;">
+<p>鼠标在绿色区域移动触发mousemove</p>
+            <p>移动的X位置：</p>
+            </div>
+<script type="text/javascript">
+    //绑定一个mousemove事件
+    //触发后修改内容
+    $("body").mousemove(function(e) {
+        $(this).find('p:last').html('移动的X位置：' + e.pageX + '移动的y位置：' + e.pageY)
+    })
+    </script>
+    <script>
+		var parentDiv = document.getElementById("parentDiv");
+		var body = document.querySelector("body");
+		parentDiv.addEventListener("click",function(){
+			var childDiv = document.createElement("div");
+			childDiv.setAttribute("class","child");
+			childDiv.innerHTML = "文字";
+			body.appendChild(childDiv);
+		});
+	</script>
+</body>
+</html>

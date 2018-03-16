@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.form{
+	margin:20px;
+	border:1px solid #999;
+	position:absolute;
+	width:540px;
+	height:160px;
+	background:#ccc;
+		
+}
+
+#content{
+	resize: none;
+	width: 400px;
+	height: 100px;
+	max-width: 400px;
+	max-height: 100px;	
+}

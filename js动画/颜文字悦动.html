@@ -1,0 +1,21 @@
+<html>
+<meta charset='utf-8' />
+<head>
+<style type="text/css">
+body{ transition: all 0.3s ease}
+span{ display:block; width:100px; }
+</style>
+</head>
+<body>
+<span id="yan">(●'◡'●)ﾉ♥</span>
+</body>
+
+<script type="text/javascript">
+	var yan = document.getElementById('yan');
+	timer = setInterval(function(){
+		i = 5 * Math.random()
+		m = 2 * Math.random()
+		yan.style.transform = "rotate(-" + i + "deg)" + " translate(0," + m +"px)";
+	},160)
+</script>
+</html>

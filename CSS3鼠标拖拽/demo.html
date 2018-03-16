@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.Div{
+	position:absolute;
+	width:100px;
+	height:100px;
+	left:100px;
+	top:100px;
+	background:pink;
+	padding:15px;
+}
+</style>
+</head>
+
+<body>
+	<div class="Div" id="oDiv"></div>
+    <script>
+	function g(id){
+		return document.getElementById(id);
+	}
+	
+	
+	var isDragging = false;
+	var startX = 0;
+	var startY = 0;
+	
+	g('oDiv').addEventListener('mousedown',function(e){
+		isDragging = true;
+		startX = e.pageX - g('oDiv').offsetLeft;
+		startY = e.pageY - g('oDiv').offsetTop;
+	})
+	
+	document.onmouseup = function(e){
+		isDragging = false;	
+	}
+	
+	document.onmousemove = function(e){
+		var moveX = 0;
+		var moveY = 0;
+		if(isDragging == true)
+		{
+			moveX = e.pageX - startX;
+			moveY = e.pageY - startY;
+			
+			var pageWidth = document.documentElement.clientWidth;
+			var pageHeight = document.documentElement.clientHeight;
+			
+			var objWidth = g('oDiv').offsetWidth;
+			var objHeight = g('oDiv').offsetHeight;
+			
+			var maxX = pageWidth - objWidth;
+			var maxY = pageHeight - objHeight;
+			
+			moveX = Math.min(maxX,Math.max(0,moveX));
+			moveY = Math.min(maxY,Math.max(0,moveY));
+			g('oDiv').style.left = moveX + 'px';
+			g('oDiv').style.top = moveY + 'px';	
+		}
+	}
+	</script>
+</body>
+</html>

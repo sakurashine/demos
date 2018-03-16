@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>   
+  <script type="text/javascript">  
+    function openWindow(){
+
+     var open=confirm("open/No");
+
+     if(open){
+
+          var httpWindow=prompt("please input http:", "http://www.baidu.com");
+
+            if(httpWindow){
+
+                window.open(httpWindow,"_blank","width=400px,height=500px,menubar=no,tolbar=no");
+
+         }
+
+    } 
+
+    }
+
+    
+  </script> 
+ </head> 
+ <body> 
+	  <input type="button" value="新窗口打开网站" onclick="openWindow()" /> 
+ </body>
+</html>

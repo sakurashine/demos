@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<h2>通过insertBefore与insertAfter添加元素</h2>
+    <button id="bt1">insertBefore</button>
+    <button id="bt2">insertAfter</button>
+    <div>
+        <p class="test1">测试insertBefore</p>
+    </div>
+    <div>
+        <p class="test2">测试insertAfter</p>
+    </div>
+    
+    <script type="text/javascript">
+    $("#bt1").on('click', function() {
+        $('<p style="color:red">第一句话</p>').insertBefore($(".test2"))
+    })
+    </script>
+    <script type="text/javascript">
+    $("#bt1").on('click', function() {
+        $('<p style="color:red">第二句话</p>').insertBefore($(".test2"))
+    })
+    </script>
+    <script type="text/javascript">
+    $("#bt2").on('click', function() {
+        $('<p style="color:red">第三句话</p>').insertAfter($(".test2"))
+    })
+    </script>
+    <script type="text/javascript">
+    $("#bt2").on('click', function() {
+        $('<p style="color:red">第四句话</p>').insertAfter($(".test2"))
+    })
+    </script>
+</body>
+</html>
